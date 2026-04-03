@@ -6,7 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 // ─── CONFIG — update before going live ────────────────────────────────────
 const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbz7RjA7e5fpyVfAG0OMb0ewAEfn4qIfCm8HAogQv1CxA59ahjrH8qAyXiqJG2lT3hPvBw/exec";
 const MAILER_URL        = "https://mailer-5x4h33dpla-uc.a.run.app/";
-const NOTIFY_EMAIL      = ["gromminggurus@gmail.com", "frenyzsalon@gmail.com"]; // receives email on each registration
+const NOTIFY_EMAIL      = ["gromminggurus@gmail.com", "frenyzsalon@gmail.com"]; 
 // ──────────────────────────────────────────────────────────────────────────
 
 const RegistrationForm = () => {
@@ -66,8 +66,8 @@ const RegistrationForm = () => {
       teamName:    formData.teamName,
       mobile:      formData.mobile,
       email:       formData.email,
-      players:     playerCount,
-      totalAmount: `₹${totalCost.toLocaleString("en-IN")}`,
+      // players:     playerCount,
+      // totalAmount: `₹${totalCost.toLocaleString("en-IN")}`,
       notifyEmail: NOTIFY_EMAIL,
     };
 
@@ -81,11 +81,12 @@ const RegistrationForm = () => {
         <strong>Team Name</strong>: ${formData.teamName}<br/>
         <strong>Mobile</strong>: ${formData.mobile}<br/>
         <strong>Email</strong>: ${formData.email}<br/>
-        <strong>Players</strong>: ${playerCount}<br/>
-        <strong>Total Amount</strong>: ₹${totalCost.toLocaleString("en-IN")}<br/>
         <strong>Submitted At</strong>: ${submittedAt}
       `,
     };
+
+          // <strong>Players</strong>: ${playerCount}<br/>
+        // <strong>Total Amount</strong>: ₹${totalCost.toLocaleString("en-IN")}<br/>
 
     try {
       // Send to Google Sheets and mailer simultaneously (same pattern as Document 2)
@@ -163,7 +164,7 @@ const RegistrationForm = () => {
           </div>
 
           {/* Player count */}
-          <div className="bg-muted rounded-lg p-5 space-y-3">
+          {/* <div className="bg-muted rounded-lg p-5 space-y-3">
             <label className="block text-sm font-medium text-foreground">
               How many players do you want to register?
             </label>
@@ -182,23 +183,23 @@ const RegistrationForm = () => {
               <span className="text-2xl font-display text-primary tracking-wider">{playerCount} PLAYERS</span>
               <span className="text-xs text-muted-foreground">8 — 15</span>
             </div>
-          </div>
+          </div> */}
 
           {/* Cost summary */}
-          <div className="border border-border rounded-lg p-5 space-y-2">
+           <div className="border border-border rounded-lg p-5 space-y-2">
             <div className="flex justify-between text-sm text-muted-foreground">
               <span>Salon Registration</span>
               <span>₹5,000</span>
             </div>
-            <div className="flex justify-between text-sm text-muted-foreground">
+          {/*  <div className="flex justify-between text-sm text-muted-foreground">
               <span>Players ({playerCount} × ₹2,000)</span>
               <span>₹{(playerCount * 2000).toLocaleString("en-IN")}</span>
             </div>
             <div className="border-t border-border pt-2 flex justify-between font-bold text-foreground">
               <span>Total</span>
               <span className="font-display text-xl tracking-wider">₹{totalCost.toLocaleString("en-IN")}</span>
-            </div>
-          </div>
+            </div>*/}
+          </div> 
 
           <button
             type="submit"
