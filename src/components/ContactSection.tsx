@@ -23,15 +23,24 @@ const ContactSection = () => {
         >
           <a href="tel:+918799461114" className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
             <Phone className="w-5 h-5 text-secondary" />
-            <span>+91 87994 61114</span>
+            <span className="text-left">
+              <span className="block text-xs text-muted-foreground/70">Registration Support</span>
+              +91 87994 61114
+            </span>
           </a>
           <a href="tel:+919924924454" className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
             <Phone className="w-5 h-5 text-secondary" />
-            <span>+91 99249 24454</span>
+            <span className="text-left">
+              <span className="block text-xs text-muted-foreground/70">Sponsorship Queries</span>
+              +91 99249 24454
+            </span>
           </a>
           <a href="mailto:gromminggurus@gmail.com" className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
             <Mail className="w-5 h-5 text-secondary" />
-            <span>gromminggurus@gmail.com</span>
+            <span className="text-left">
+              <span className="block text-muted-foreground/70 text-xs">Email</span>
+              gromminggurus@gmail.com
+            </span>
           </a>
         </motion.div>
       </div>

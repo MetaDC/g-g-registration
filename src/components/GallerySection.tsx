@@ -1,18 +1,19 @@
 import { motion } from "framer-motion";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
-import gallery5 from "@/assets/gallery-5.jpg";
-import gallery6 from "@/assets/gallery-6.jpg";
+import gallery1 from "@/assets/1.webp";
+import gallery2 from "@/assets/2.webp";
+import gallery3 from "@/assets/3.webp";
+import gallery4 from "@/assets/4.webp";
+import gallery5 from "@/assets/5.webp";
+import gallery6 from "@/assets/6.webp";
 
 const galleryItems = [
   { id: 1, label: "Tournament Action", src: gallery1 },
   { id: 2, label: "Team Spirit", src: gallery2 },
-  { id: 3, label: "Champion Moments", src: gallery3 },
+  { id: 3, label: "Champion Moments", src: gallery6 },
+  
   { id: 4, label: "On the Field", src: gallery4 },
-  { id: 5, label: "Victory Celebrations", src: gallery5 },
-  { id: 6, label: "Behind the Scenes", src: gallery6 },
+  { id: 5, label: "Victory Celebrations", src: gallery3 },
+  { id: 6, label: "Behind the Scenes", src: gallery5 },
 ];
 
 const GallerySection = () => {

@@ -51,7 +51,7 @@ const AboutSection = () => {
                     <span className="text-secondary font-bold mt-0.5">•</span>
                     <span>Salon registration fee: <strong className="text-foreground">₹5,000</strong></span>
                   </li>
-                  {/* <li className="flex items-start gap-2">
+                   <li className="flex items-start gap-2">
                     <span className="text-secondary font-bold mt-0.5">•</span>
                     <span>Player registration: <strong className="text-foreground">₹2,000 per player</strong></span>
                   </li>
@@ -62,7 +62,7 @@ const AboutSection = () => {
                   <li className="flex items-start gap-2">
                     <span className="text-secondary font-bold mt-0.5">•</span>
                     <span><strong className="text-foreground">8 players</strong> will play on the team at one time</span>
-                  </li> */}
+                  </li> 
                 </ul>
               </div>
 
