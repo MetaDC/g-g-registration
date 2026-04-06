@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 
 // ─── CONFIG — update before going live ────────────────────────────────────
-const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbxxKcCOA-mDfAnRm_GTGEz4eThy-I_JHodbi4wTW74xrYWDEEEknjPu2XRQ466d5OZowQ/exec";
+const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbxg-TkX_b2-zAbxHYquet0kFhYtpay0WbWYeOrF6uYSg1t2_mJiTIUDj4HoCgbBPRtxpg/exec";
 const MAILER_URL        = "https://mailer-5x4h33dpla-uc.a.run.app/";
 const NOTIFY_EMAIL      = ["gromminggurus@gmail.com", "frenyzsalon@gmail.com"]; 
 // ──────────────────────────────────────────────────────────────────────────

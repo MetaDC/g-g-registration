@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Download, Phone } from "lucide-react";
+import { X, Download, Phone, User, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 
 // ─── CONFIG — update before going live ───────────────────────────────────
-const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbxxKcCOA-mDfAnRm_GTGEz4eThy-I_JHodbi4wTW74xrYWDEEEknjPu2XRQ466d5OZowQ/exec";
+const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbxg-TkX_b2-zAbxHYquet0kFhYtpay0WbWYeOrF6uYSg1t2_mJiTIUDj4HoCgbBPRtxpg/exec";
 const MAILER_URL        = "https://mailer-5x4h33dpla-uc.a.run.app/";
 const NOTIFY_EMAIL   = ["gromminggurus@gmail.com", "frenyzsalon@gmail.com"];
 
@@ -16,6 +16,8 @@ const SPONSORSHIP_PDF_URL = "/sponsorship-ppt.pdf";
 
 const SponsorshipPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [name, setName] = useState("");
+  const [company, setCompany] = useState("");
   const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -50,6 +52,8 @@ const SponsorshipPopup = () => {
 
     const payload = {
       submittedAt,
+      name,
+      company,
       phone:       cleaned,
       notifyEmail: NOTIFY_EMAIL,
       formType:    "sponsorship",
@@ -60,6 +64,8 @@ const SponsorshipPopup = () => {
       subject: "New Sponsorship Brochure Request",
       message: `
         <h3>Sponsorship Brochure Download Request</h3>
+        <strong>Name</strong>: ${name}<br/>
+        <strong>Company</strong>: ${company}<br/>
         <strong>Phone</strong>: ${cleaned}<br/>
         <strong>Submitted At</strong>: ${submittedAt}
       `,
@@ -137,13 +143,35 @@ const SponsorshipPopup = () => {
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Interested in sponsoring the Grooming Gurus Cricket Tournament?
-                Check out our sponsorship packages! Enter your phone number to
+                Check out our sponsorship packages! Enter your details to
                 download the brochure.
               </p>
             </div>
 
             {!submitted ? (
               <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="relative">
+                  <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                  <Input
+                    type="text"
+                    placeholder="Your Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="pl-10"
+                    required
+                  />
+                </div>
+                <div className="relative">
+                  <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                  <Input
+                    type="text"
+                    placeholder="Company Name"
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
+                    className="pl-10"
+                    required
+                  />
+                </div>
                 <div className="relative">
                   <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                   <Input
@@ -163,7 +191,7 @@ const SponsorshipPopup = () => {
                   {isSubmitting ? "SUBMITTING…" : "DOWNLOAD PACKAGES PDF"}
                 </Button>
                 <p className="text-xs text-muted-foreground text-center">
-                  We'll only use your number to share sponsorship details.
+                  We'll only use your details to share sponsorship information.
                 </p>
               </form>
             ) : (
