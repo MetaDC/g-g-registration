@@ -12,7 +12,7 @@ import sponsor4 from "@/assets/silk-essence.png";
 import sponsor5 from "@/assets/hnk.png";
 import sponsor6 from "@/assets/n-lounge.png";
 import sponsor7 from "@/assets/oasis.png";
-
+import sponsor8 from "@/assets/3tenx.png";
 
 // import sponsor6 from "@/assets/sponsor-6.png";
 
@@ -24,7 +24,7 @@ const sponsors = [
   { name: "GIFTING PARTNER", src: sponsor5 },
   { name: "HYDRATING PARTNER", src: sponsor6 },
   { name: "SNACKING PARTNER", src: sponsor7 },
-  
+  { name: "Title Sponsor", src: sponsor8 },
   // { name: "Wolkrit Cosmetics", src: sponsor6 },
 ];
 
@@ -65,7 +65,10 @@ const SponsorsSection = () => {
           >
             <CarouselContent>
               {sponsors.map((sponsor, index) => (
-                <CarouselItem key={`${sponsor.name}-${index}`} className="basis-1/3 sm:basis-1/4 md:basis-1/5 lg:basis-1/6">
+                <CarouselItem
+                  key={`${sponsor.name}-${index}`}
+                  className="basis-1/3 sm:basis-1/4 md:basis-1/5 lg:basis-1/6"
+                >
                   <div className="flex flex-col items-center gap-2 grayscale hover:grayscale-0 transition-all duration-400">
                     <img
                       src={sponsor.src}
